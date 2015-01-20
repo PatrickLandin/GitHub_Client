@@ -6,16 +6,54 @@
 //  Copyright (c) 2015 Patrick Landin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class NetworkController {
   
+  let clientSecret = "92ce27ca3dfd9633afc764e2cc73d0824db26cbf"
+  let clientID = "b4185c3188e6db730bc5"
   var urlSession : NSURLSession
+  var accessToken : String?
   
   init() {
     let ephemeralConfiguration = NSURLSessionConfiguration.ephemeralSessionConfiguration()
     self.urlSession = NSURLSession(configuration: ephemeralConfiguration)
   }
+  
+  
+  func requestAccessToken() {
+    let url = "https://github.com/login/oauth/authorize?client_id=\(self.clientID)&scope=user,repo"
+    
+    UIApplication.sharedApplication().openURL(NSURL(string: url)!)
+  }
+  
+  func handleCallBackURL(url: NSURL) {
+    let code = url.query
+    
+    let oauthURL = "https://github.com/login/oauth/access_token\(code!)&client_id=\(self.clientID)&client_secret=\(self.clientSecret)"
+    let postRequest = NSMutableURLRequest(URL: NSURL(string: oauthURL)!)
+    postRequest.HTTPMethod = "POST"
+    postRequest.HTTPBody
+    
+    let dataTask = self.urlSession.dataTaskWithRequest(postRequest, completionHandler: { (data, response, error) -> Void in
+      if error == nil {
+        if let httpResponse = response as? NSHTTPURLResponse {
+          switch httpResponse.statusCode {
+          case 200...299:
+            println("BOOOOOM")
+            
+            let tokenResponse = NSString(data: data, encoding: NSASCIIStringEncoding)
+            println(tokenResponse)
+            
+            
+          default:
+            println("default case")
+          }
+        }
+      }
+    })
+  }
+  
   
   func fetchReposForSearchTerm(searchTerm : String, callback : ([Repository]?, String?) -> (Void)) {
     
