@@ -36,7 +36,7 @@ class NetworkController {
               
               NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                 
-                let jsonArray = jsonDictionary["items"] as [[String : AnyObject]]
+                if let jsonArray = jsonDictionary["items"] as? [[String : AnyObject]] {
                 var allRepos = [Repository]()
                 for item in jsonArray {
                   var repos = Repository(jsonDictionary: item)
@@ -44,7 +44,7 @@ class NetworkController {
                 }
                 
                 callback(allRepos, nil)
-                
+                }
               })
             }
 
