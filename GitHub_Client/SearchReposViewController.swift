@@ -11,7 +11,6 @@ import UIKit
 class SearchReposViewController: UIViewController, UITableViewDataSource, UISearchBarDelegate {
   
   @IBOutlet weak var tableView: UITableView!
-
   @IBOutlet weak var searchBar: UISearchBar!
   
   let networkController = NetworkController()
@@ -45,7 +44,7 @@ class SearchReposViewController: UIViewController, UITableViewDataSource, UISear
   
   func searchBarSearchButtonClicked(searchBar: UISearchBar) {
     println(searchBar.text)
-    searchBar.resignFirstResponder()
+    self.searchBar.resignFirstResponder()
     
     self.networkController.fetchReposForSearchTerm(self.searchBar.text, callback: { (items, error) -> (Void) in
       if error == nil {

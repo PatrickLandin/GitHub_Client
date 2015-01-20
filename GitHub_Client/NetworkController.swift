@@ -14,7 +14,6 @@ class NetworkController {
   
   init() {
     let ephemeralConfiguration = NSURLSessionConfiguration.ephemeralSessionConfiguration()
-    
     self.urlSession = NSURLSession(configuration: ephemeralConfiguration)
   }
   
@@ -25,7 +24,8 @@ class NetworkController {
     let dataTask = self.urlSession.dataTaskWithURL(url!, completionHandler: { (data, urlResponse, error) -> Void in
       
         println(urlResponse)
-        
+      
+        // NSURL does not have a member named statusCode
         if let httpResponse = urlResponse as? NSHTTPURLResponse {
           println(httpResponse.statusCode)
           switch httpResponse.statusCode {
@@ -44,6 +44,7 @@ class NetworkController {
                 }
                 
                 callback(allRepos, nil)
+                
               })
             }
 
