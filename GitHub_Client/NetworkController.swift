@@ -24,6 +24,8 @@ class NetworkController {
   let accessTokenUserDefaultsKey : String = "access Token"
   var accessToken : String?
   
+  let imageQueue = NSOperationQueue()
+  
   init() {
     let ephemeralConfiguration = NSURLSessionConfiguration.ephemeralSessionConfiguration()
     self.urlSession = NSURLSession(configuration: ephemeralConfiguration)
@@ -133,5 +135,72 @@ class NetworkController {
     
   }
   
-  fetchUsersForSearch
+  func fetchUsersForSearchterm(searchTerm : String, callback : ([User]?, String?) -> (Void)) {
+    let url = NSURL(string: "https://api.github.com/search/users?q=\(searchTerm)")
+    let request = NSMutableURLRequest(URL: url!)
+    request.setValue("token \(self.accessToken)", forHTTPHeaderField: "Authorization")
+    
+    let dataTask = self.urlSession.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+      if error == nil {
+      
+        if let httpResponse = response as? NSHTTPURLResponse {
+          println(httpResponse.statusCode)
+          switch httpResponse.statusCode {
+          case 200...299:
+          println("Boom User")
+            if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String : AnyObject] {
+              if let itemsArray = jsonDictionary["items"] as? [[String : AnyObject]] {
+              
+                var users = [User]()
+                
+                for items in itemsArray {
+                  let user = User(jsonDictionary: items)
+                  users.append(user)
+                }
+                
+                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                  callback(users, nil)
+                })
+            }
+          }
+          default:
+          println("Default User")
+          }
+        }
+      }
+    })
+    
+    dataTask.resume()
+  }
+  
+  func fetchAvatarForURL(url : String, completionHandler : (UIImage) -> (Void)) {
+    
+    let url = NSURL(string: url)
+    
+    self.imageQueue.addOperationWithBlock { () -> Void in
+      let imageData = NSData(contentsOfURL: url!)
+      let image = UIImage(data: imageData!)
+      
+      NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+        completionHandler(image!)
+      })
+    }
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

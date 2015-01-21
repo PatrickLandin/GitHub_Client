@@ -34,4 +34,16 @@ class SearchUsersViewController: UIViewController, UICollectionViewDataSource, U
     return cell
   }
   
+  func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    searchBar.resignFirstResponder()
+    
+    NetworkController.sharedNetworkController.fetchUsersForSearchterm(searchBar.text, callback: { (users, error) -> (Void) in
+      
+      if error == nil {
+        self.users = users!
+        self.collectionView.reloadData()
+      }
+    })
+  }
+  
 }
