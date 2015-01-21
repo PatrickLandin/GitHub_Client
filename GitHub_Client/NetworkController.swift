@@ -132,4 +132,6 @@ class NetworkController {
     dataTask.resume()
     
   }
+  
+  fetchUsersForSearch
 }

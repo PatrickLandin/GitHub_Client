@@ -17,6 +17,9 @@
 		EC48910F1A6DA82F00C91CFF /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC48910E1A6DA82F00C91CFF /* MenuTableViewController.swift */; };
 		EC4891131A6DAC5E00C91CFF /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4891121A6DAC5E00C91CFF /* Repository.swift */; };
 		EC4891151A6DAEF700C91CFF /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4891141A6DAEF700C91CFF /* NetworkController.swift */; };
+		EC992FFC1A704CE600B78CD7 /* SearchUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC992FFB1A704CE600B78CD7 /* SearchUsersViewController.swift */; };
+		EC992FFE1A704DA400B78CD7 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC992FFD1A704DA400B78CD7 /* UserCell.swift */; };
+		ECD0830D1A70508C0025725F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD0830C1A70508C0025725F /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		EC48910E1A6DA82F00C91CFF /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTableViewController.swift; path = ../MenuTableViewController.swift; sourceTree = "<group>"; };
 		EC4891121A6DAC5E00C91CFF /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		EC4891141A6DAEF700C91CFF /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		EC992FFB1A704CE600B78CD7 /* SearchUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersViewController.swift; sourceTree = "<group>"; };
+		EC992FFD1A704DA400B78CD7 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		ECD0830C1A70508C0025725F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +97,10 @@
 				EC48910E1A6DA82F00C91CFF /* MenuTableViewController.swift */,
 				EC48910C1A6DA7A700C91CFF /* SearchReposViewController.swift */,
 				EC4891141A6DAEF700C91CFF /* NetworkController.swift */,
+				EC992FFB1A704CE600B78CD7 /* SearchUsersViewController.swift */,
+				EC992FFD1A704DA400B78CD7 /* UserCell.swift */,
 				EC4890EE1A6DA54900C91CFF /* Main.storyboard */,
+				ECD0830C1A70508C0025725F /* User.swift */,
 				EC4890F11A6DA54900C91CFF /* Images.xcassets */,
 				EC4890F31A6DA54900C91CFF /* LaunchScreen.xib */,
 				EC4890E81A6DA54900C91CFF /* Supporting Files */,
@@ -224,10 +233,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC992FFE1A704DA400B78CD7 /* UserCell.swift in Sources */,
 				EC48910F1A6DA82F00C91CFF /* MenuTableViewController.swift in Sources */,
 				EC48910D1A6DA7A700C91CFF /* SearchReposViewController.swift in Sources */,
 				EC4891151A6DAEF700C91CFF /* NetworkController.swift in Sources */,
 				EC4890ED1A6DA54900C91CFF /* ViewController.swift in Sources */,
+				ECD0830D1A70508C0025725F /* User.swift in Sources */,
+				EC992FFC1A704CE600B78CD7 /* SearchUsersViewController.swift in Sources */,
 				EC4890EB1A6DA54900C91CFF /* AppDelegate.swift in Sources */,
 				EC4891131A6DAC5E00C91CFF /* Repository.swift in Sources */,
 			);

@@ -46,6 +46,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="8qN-K9-caQ" kind="show" identifier="SHOW_USER" id="iTY-VX-2bY"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="al9-AR-N5J" style="IBUITableViewCellStyleDefault" id="hiD-3l-cD2">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -167,7 +170,79 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E63-Wx-ue4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1753" y="400"/>
+            <point key="canvasLocation" x="1765" y="68"/>
+        </scene>
+        <!--Search Users View Controller-->
+        <scene sceneID="aJH-ZQ-Ql9">
+            <objects>
+                <viewController id="8qN-K9-caQ" customClass="SearchUsersViewController" customModule="GitHub_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tog-Y7-bze"/>
+                        <viewControllerLayoutGuide type="bottom" id="f44-qW-fgb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n7O-QJ-fbO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="rSP-zw-iBR">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="XcE-7J-sea"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pkf-D7-pxU">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fba-DK-Fxs">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="USER_CELL" id="WTR-PY-L3b" customClass="UserCell" customModule="GitHub_Client" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ilj-Qa-ofZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="ilj-Qa-ofZ" firstAttribute="leading" secondItem="WTR-PY-L3b" secondAttribute="leadingMargin" constant="-8" id="31b-VL-hdu"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="ilj-Qa-ofZ" secondAttribute="bottom" constant="-8" id="35i-gK-Z2L"/>
+                                            <constraint firstItem="ilj-Qa-ofZ" firstAttribute="top" secondItem="WTR-PY-L3b" secondAttribute="topMargin" constant="-8" id="6ju-tj-f41"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="ilj-Qa-ofZ" secondAttribute="trailing" constant="-8" id="NGV-3i-Gis"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="rSP-zw-iBR" secondAttribute="trailing" constant="-16" id="Bfh-se-v43"/>
+                            <constraint firstItem="pkf-D7-pxU" firstAttribute="top" secondItem="rSP-zw-iBR" secondAttribute="bottom" id="NiZ-f2-ySk"/>
+                            <constraint firstItem="pkf-D7-pxU" firstAttribute="leading" secondItem="n7O-QJ-fbO" secondAttribute="leadingMargin" constant="-16" id="Tfh-UE-N2g"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="pkf-D7-pxU" secondAttribute="bottom" id="eK3-dm-3rR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pkf-D7-pxU" secondAttribute="trailing" constant="-16" id="h02-gg-N4s"/>
+                            <constraint firstItem="rSP-zw-iBR" firstAttribute="leading" secondItem="n7O-QJ-fbO" secondAttribute="leadingMargin" constant="-16" id="mie-P9-FAR"/>
+                            <constraint firstItem="rSP-zw-iBR" firstAttribute="top" secondItem="tog-Y7-bze" secondAttribute="bottom" id="muG-3R-Wdq"/>
+                            <constraint firstItem="pkf-D7-pxU" firstAttribute="top" secondItem="rSP-zw-iBR" secondAttribute="bottom" id="u36-ea-qpE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="pkf-D7-pxU" id="5G2-rb-0lx"/>
+                        <outlet property="searchBar" destination="rSP-zw-iBR" id="s6s-1h-bcL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QRc-3J-k0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1765" y="762"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ecN-BS-lZq">
