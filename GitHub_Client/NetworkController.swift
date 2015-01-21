@@ -45,7 +45,7 @@ class NetworkController {
     let postRequest = NSMutableURLRequest(URL: NSURL(string: oauthURL)!)
     postRequest.HTTPMethod = "POST"
     
-//    BODY WAY OF DOING THINGS
+//    BODY WAY OF DOING THINGS.
 //    let bodyString = "\(code!)&client_id=\(self.clientID)&client_secret=\(self.clientSecret)"
 //    let bodyData = bodyString.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
 //    let length = bodyData!.length

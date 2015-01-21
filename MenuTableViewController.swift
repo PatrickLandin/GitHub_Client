@@ -9,8 +9,6 @@
 import UIKit
 
 class MenuTableViewController: UITableViewController {
-
-//  var networkController : NetworkController!
   
     override func viewDidLoad() {
         super.viewDidLoad()

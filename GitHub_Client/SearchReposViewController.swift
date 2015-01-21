@@ -13,7 +13,6 @@ class SearchReposViewController: UIViewController, UITableViewDataSource, UISear
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var searchBar: UISearchBar!
   
-  let networkController = NetworkController()
   var repository = [Repository]()
   
     override func viewDidLoad() {
@@ -46,7 +45,7 @@ class SearchReposViewController: UIViewController, UITableViewDataSource, UISear
     println(searchBar.text)
     self.searchBar.resignFirstResponder()
     
-    self.networkController.fetchReposForSearchTerm(self.searchBar.text, callback: { (items, error) -> (Void) in
+    NetworkController.sharedNetworkController.fetchReposForSearchTerm(self.searchBar.text, callback: { (items, error) -> (Void) in
       if error == nil {
         
         self.repository = items!
