@@ -10,6 +10,14 @@ import UIKit
 
 class NetworkController {
   
+  // Singleton
+  class var sharedNetworkController : NetworkController {
+    struct Static {
+      static let instance : NetworkController = NetworkController()
+    }
+    return Static.instance
+  }
+  
   let clientSecret = "92ce27ca3dfd9633afc764e2cc73d0824db26cbf"
   let clientID = "b4185c3188e6db730bc5"
   var urlSession : NSURLSession
