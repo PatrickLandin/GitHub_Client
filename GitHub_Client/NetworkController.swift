@@ -107,18 +107,17 @@ class NetworkController {
             
             if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String : AnyObject] {
               
-              NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                
                 if let jsonArray = jsonDictionary["items"] as? [[String : AnyObject]] {
                 var allRepos = [Repository]()
                 for item in jsonArray {
                   var repos = Repository(jsonDictionary: item)
                   allRepos.append(repos)
                 }
-                
+                  
+                  NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                 callback(allRepos, nil)
-                }
-              })
+                })
+              }
             }
 
           default:
@@ -149,10 +148,9 @@ class NetworkController {
           case 200...299:
           println("Boom User")
             if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String : AnyObject] {
-              if let itemsArray = jsonDictionary["items"] as? [[String : AnyObject]] {
               
+              if let itemsArray = jsonDictionary["items"] as? [[String : AnyObject]] {
                 var users = [User]()
-                
                 for items in itemsArray {
                   let user = User(jsonDictionary: items)
                   users.append(user)

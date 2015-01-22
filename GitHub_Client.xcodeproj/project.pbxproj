@@ -21,6 +21,9 @@
 		EC5F746E1A707CE300C98BCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC5F746D1A707CE300C98BCB /* Main.storyboard */; };
 		EC992FFC1A704CE600B78CD7 /* SearchUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC992FFB1A704CE600B78CD7 /* SearchUsersViewController.swift */; };
 		EC992FFE1A704DA400B78CD7 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC992FFD1A704DA400B78CD7 /* UserCell.swift */; };
+		ECBA07891A71A96D00B580F5 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECBA07881A71A96D00B580F5 /* AlertView.xib */; };
+		ECBA078B1A71AF0F00B580F5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA078A1A71AF0F00B580F5 /* WebViewController.swift */; };
+		ECBA078D1A71B66800B580F5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA078C1A71B66800B580F5 /* Extensions.swift */; };
 		ECD0830D1A70508C0025725F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD0830C1A70508C0025725F /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +56,9 @@
 		EC5F746D1A707CE300C98BCB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EC992FFB1A704CE600B78CD7 /* SearchUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersViewController.swift; sourceTree = "<group>"; };
 		EC992FFD1A704DA400B78CD7 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		ECBA07881A71A96D00B580F5 /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
+		ECBA078A1A71AF0F00B580F5 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		ECBA078C1A71B66800B580F5 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ECD0830C1A70508C0025725F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,14 +105,17 @@
 				EC4890EC1A6DA54900C91CFF /* ViewController.swift */,
 				EC48910E1A6DA82F00C91CFF /* MenuTableViewController.swift */,
 				EC48910C1A6DA7A700C91CFF /* SearchReposViewController.swift */,
+				ECBA078A1A71AF0F00B580F5 /* WebViewController.swift */,
 				EC992FFB1A704CE600B78CD7 /* SearchUsersViewController.swift */,
+				ECBA078C1A71B66800B580F5 /* Extensions.swift */,
 				EC3F96921A7065300024C69B /* UserDetailViewController.swift */,
 				EC3F96941A7067BF0024C69B /* ToUserAnimationController.swift */,
 				EC4891141A6DAEF700C91CFF /* NetworkController.swift */,
+				ECBA07881A71A96D00B580F5 /* AlertView.xib */,
 				EC992FFD1A704DA400B78CD7 /* UserCell.swift */,
-				EC5F746D1A707CE300C98BCB /* Main.storyboard */,
 				ECD0830C1A70508C0025725F /* User.swift */,
 				EC4891121A6DAC5E00C91CFF /* Repository.swift */,
+				EC5F746D1A707CE300C98BCB /* Main.storyboard */,
 				EC4890F11A6DA54900C91CFF /* Images.xcassets */,
 				EC4890F31A6DA54900C91CFF /* LaunchScreen.xib */,
 				EC4890E81A6DA54900C91CFF /* Supporting Files */,
@@ -220,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC5F746E1A707CE300C98BCB /* Main.storyboard in Resources */,
+				ECBA07891A71A96D00B580F5 /* AlertView.xib in Resources */,
 				EC4890F51A6DA54900C91CFF /* LaunchScreen.xib in Resources */,
 				EC4890F21A6DA54900C91CFF /* Images.xcassets in Resources */,
 			);
@@ -246,6 +256,8 @@
 				EC3F96951A7067BF0024C69B /* ToUserAnimationController.swift in Sources */,
 				EC4890ED1A6DA54900C91CFF /* ViewController.swift in Sources */,
 				ECD0830D1A70508C0025725F /* User.swift in Sources */,
+				ECBA078B1A71AF0F00B580F5 /* WebViewController.swift in Sources */,
+				ECBA078D1A71B66800B580F5 /* Extensions.swift in Sources */,
 				EC3F96931A7065300024C69B /* UserDetailViewController.swift in Sources */,
 				EC992FFC1A704CE600B78CD7 /* SearchUsersViewController.swift in Sources */,
 				EC4890EB1A6DA54900C91CFF /* AppDelegate.swift in Sources */,

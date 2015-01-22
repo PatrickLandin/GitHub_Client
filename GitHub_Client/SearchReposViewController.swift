@@ -57,5 +57,16 @@ class SearchReposViewController: UIViewController, UITableViewDataSource, UISear
       
     })
   }
-
+  
+  //MARK: PrepareForSegue
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "SHOW_WEB" {
+      let destinationVC = segue.destinationViewController as WebViewController
+      let selectedIndexPath = self.tableView.indexPathForSelectedRow()
+      let repo = self.repository[selectedIndexPath!.row]
+      destinationVC.repoURL = repo.repoURL
+    }
+  }
 }
+

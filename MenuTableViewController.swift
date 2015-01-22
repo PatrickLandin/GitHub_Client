@@ -26,16 +26,37 @@ class MenuTableViewController: UITableViewController {
     super.viewWillAppear(animated)
     self.navigationController?.delegate = nil
     // This prevents a crash when navigating back to MenuVC after visiting SearchUserVC or SearchReposVC.
-    // 
+    // Navigation controller delegate continues to look for zombie animation.
+    
+    if NetworkController.sharedNetworkController.accessToken == nil {
+      let alertView = NSBundle.mainBundle().loadNibNamed("AlertView", owner: self, options: nil).first as UIView
+      alertView.center = self.view.center
+      alertView.alpha = 0
+      alertView.transform = CGAffineTransformMakeScale(0.5, 0.5)
+      self.view.addSubview(alertView)
+      
+      UIView.animateWithDuration(0.4, delay: 0.5, options: nil, animations: { () -> Void in
+        alertView.alpha = 1
+        alertView.transform =  CGAffineTransformMakeScale(1.0, 1.0)
+        }) { (finished) -> Void in
+      }
+    } else {
+      println("Fuck you GitHub!")
+    }
   }
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
+  }
+  
+  @IBAction func gitHubButtonPressed(sender: AnyObject) {
+    
     if NetworkController.sharedNetworkController.accessToken == nil {
       NetworkController.sharedNetworkController.requestAccessToken()
     }
+    
   }
-
+  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
