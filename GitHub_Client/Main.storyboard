@@ -12,7 +12,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="YE7-at-2g2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Search" id="aFW-e4-dL4">
                                 <cells>
@@ -108,7 +109,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biv-Kl-59X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1060" y="400"/>
+            <point key="canvasLocation" x="1067" y="363"/>
         </scene>
         <!--Search Repos View Controller-->
         <scene sceneID="XSz-4m-1qe">
@@ -285,21 +286,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Ag-sa-Qyy">
-                                <rect key="frame" x="16" y="72" width="175" height="175"/>
+                                <rect key="frame" x="16" y="72" width="150" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="PyD-XW-35b"/>
-                                    <constraint firstAttribute="height" constant="175" id="ocl-gM-IkK"/>
+                                    <constraint firstAttribute="width" constant="150" id="PyD-XW-35b"/>
+                                    <constraint firstAttribute="height" constant="150" id="ocl-gM-IkK"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXW-rY-eVR">
-                                <rect key="frame" x="199" y="220" width="109" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DKv-LS-dns">
-                                <rect key="frame" x="0.0" y="255" width="600" height="345"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="230" width="600" height="370"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="USER_REPOCELL" textLabel="Oq5-bj-U6w" detailTextLabel="NR9-ob-0hz" style="IBUITableViewCellStyleSubtitle" id="u2E-zw-Joa">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -327,6 +323,18 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTo-J6-pre">
+                                <rect key="frame" x="174" y="153" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXW-rY-eVR">
+                                <rect key="frame" x="174" y="105" width="109" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -334,7 +342,9 @@
                             <constraint firstItem="DKv-LS-dns" firstAttribute="top" secondItem="eXW-rY-eVR" secondAttribute="bottom" constant="8" id="4vY-Hw-1y4"/>
                             <constraint firstItem="DKv-LS-dns" firstAttribute="leading" secondItem="BW7-a2-ccq" secondAttribute="leadingMargin" constant="-16" id="6i0-gR-EaV"/>
                             <constraint firstAttribute="centerX" secondItem="7Ag-sa-Qyy" secondAttribute="centerX" id="76b-o5-vpM"/>
+                            <constraint firstItem="DKv-LS-dns" firstAttribute="top" secondItem="7Ag-sa-Qyy" secondAttribute="bottom" constant="8" id="D39-Ej-jnr"/>
                             <constraint firstItem="ZBS-YO-lPb" firstAttribute="top" secondItem="DKv-LS-dns" secondAttribute="bottom" id="OMF-kM-jfb"/>
+                            <constraint firstItem="eXW-rY-eVR" firstAttribute="top" secondItem="7P4-UL-5hB" secondAttribute="bottom" constant="41" id="PAR-SL-9IN"/>
                             <constraint firstItem="eXW-rY-eVR" firstAttribute="bottom" secondItem="7Ag-sa-Qyy" secondAttribute="bottom" id="PMJ-fs-e9E"/>
                             <constraint firstAttribute="centerX" secondItem="eXW-rY-eVR" secondAttribute="centerX" id="a7D-Ed-gxO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DKv-LS-dns" secondAttribute="trailing" constant="-16" id="oNa-aH-jyM"/>
@@ -347,8 +357,10 @@
                             <mask key="constraints">
                                 <exclude reference="76b-o5-vpM"/>
                                 <exclude reference="owf-f8-IIf"/>
+                                <exclude reference="PMJ-fs-e9E"/>
                                 <exclude reference="a7D-Ed-gxO"/>
                                 <exclude reference="p7S-Ik-lXN"/>
+                                <exclude reference="4vY-Hw-1y4"/>
                             </mask>
                         </variation>
                     </view>

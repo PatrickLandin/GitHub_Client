@@ -10,6 +10,8 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
   
+//  var alertView : UIAlertView
+  
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -41,7 +43,7 @@ class MenuTableViewController: UITableViewController {
         }) { (finished) -> Void in
       }
     } else {
-      println("Fuck you GitHub!")
+      println("Got it")
     }
   }
   
