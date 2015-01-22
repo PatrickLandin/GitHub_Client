@@ -219,6 +219,10 @@
                                             <constraint firstItem="ilj-Qa-ofZ" firstAttribute="top" secondItem="WTR-PY-L3b" secondAttribute="topMargin" constant="-8" id="6ju-tj-f41"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="ilj-Qa-ofZ" secondAttribute="trailing" constant="-8" id="NGV-3i-Gis"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="ilj-Qa-ofZ" id="RFy-71-4f9"/>
+                                            <segue destination="A1C-0z-9OD" kind="show" identifier="SHOW_USER" id="6Zz-99-lIL"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -243,6 +247,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRc-3J-k0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1765" y="762"/>
+        </scene>
+        <!--User Detail View Controller-->
+        <scene sceneID="DoO-CE-Au9">
+            <objects>
+                <viewController id="A1C-0z-9OD" customClass="UserDetailViewController" customModule="GitHub_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7P4-UL-5hB"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZBS-YO-lPb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BW7-a2-ccq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Ag-sa-Qyy">
+                                <rect key="frame" x="200" y="89" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="PyD-XW-35b"/>
+                                    <constraint firstAttribute="height" constant="200" id="ocl-gM-IkK"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7Ag-sa-Qyy" firstAttribute="top" secondItem="7P4-UL-5hB" secondAttribute="bottom" constant="25" id="4LI-n0-CHn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Ag-sa-Qyy" secondAttribute="trailing" constant="184" id="fpP-EL-wG2"/>
+                            <constraint firstItem="7Ag-sa-Qyy" firstAttribute="leading" secondItem="BW7-a2-ccq" secondAttribute="leadingMargin" constant="184" id="owf-f8-IIf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="userImageView" destination="7Ag-sa-Qyy" id="Rqk-0W-48N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wr2-XQ-R1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2445" y="762"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ecN-BS-lZq">

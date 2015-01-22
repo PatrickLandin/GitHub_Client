@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchUsersViewController: UIViewController, UICollectionViewDataSource, UISearchBarDelegate {
+class SearchUsersViewController: UIViewController, UICollectionViewDataSource, UISearchBarDelegate, UINavigationControllerDelegate {
 
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var searchBar: UISearchBar!
@@ -30,14 +30,23 @@ class SearchUsersViewController: UIViewController, UICollectionViewDataSource, U
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier("USER_CELL", forIndexPath: indexPath) as UserCell
-    
+    var user = self.users[indexPath.row]
+    if user.avatarImage == nil {
+      NetworkController.sharedNetworkController.fetchAvatarForURL(user.avatarImageURL, completionHandler: { (image) -> (Void) in
+        cell.imageView.image = image
+        user.avatarImage = image
+        self.users[indexPath.row] = user
+      })
+    } else {
+      cell.imageView.image = user.avatarImage
+    }
     return cell
   }
   
   func searchBarSearchButtonClicked(searchBar: UISearchBar) {
     searchBar.resignFirstResponder()
     
-    NetworkController.sharedNetworkController.fetchUsersForSearchterm(searchBar.text, callback: { (users, error) -> (Void) in
+    NetworkController.sharedNetworkController.fetchUsersForSearchTerm(searchBar.text, callback: { (users, error) -> (Void) in
       
       if error == nil {
         self.users = users!
@@ -46,4 +55,18 @@ class SearchUsersViewController: UIViewController, UICollectionViewDataSource, U
     })
   }
   
+  func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    if toVC is UserDetailViewController {
+    return ToUserAnimationController()
+    }
+    return nil
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "SHOW_USER" {
+      let destinationVC = segue.destinationViewController as UserDetailViewController
+      let selectedIndexPath = self.collectionView.indexPathsForSelectedItems().first as NSIndexPath
+      destinationVC.selectedUser = self.users[selectedIndexPath.row]
+    }
+  }
 }

@@ -103,7 +103,7 @@ class NetworkController {
           println(httpResponse.statusCode)
           switch httpResponse.statusCode {
           case 200...299:
-            println("Boom. HTTP response worked")
+            println("Boom Repo")
             
             if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String : AnyObject] {
               
@@ -135,10 +135,10 @@ class NetworkController {
     
   }
   
-  func fetchUsersForSearchterm(searchTerm : String, callback : ([User]?, String?) -> (Void)) {
+  func fetchUsersForSearchTerm(searchTerm : String, callback : ([User]?, String?) -> (Void)) {
     let url = NSURL(string: "https://api.github.com/search/users?q=\(searchTerm)")
     let request = NSMutableURLRequest(URL: url!)
-    request.setValue("token \(self.accessToken)", forHTTPHeaderField: "Authorization")
+    request.setValue("token \(self.accessToken!)", forHTTPHeaderField: "Authorization")
     
     let dataTask = self.urlSession.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
       if error == nil {

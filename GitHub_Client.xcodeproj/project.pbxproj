@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC3F96931A7065300024C69B /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3F96921A7065300024C69B /* UserDetailViewController.swift */; };
+		EC3F96951A7067BF0024C69B /* ToUserAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3F96941A7067BF0024C69B /* ToUserAnimationController.swift */; };
 		EC4890EB1A6DA54900C91CFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4890EA1A6DA54900C91CFF /* AppDelegate.swift */; };
 		EC4890ED1A6DA54900C91CFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4890EC1A6DA54900C91CFF /* ViewController.swift */; };
 		EC4890F01A6DA54900C91CFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4890EE1A6DA54900C91CFF /* Main.storyboard */; };
@@ -33,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC3F96921A7065300024C69B /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		EC3F96941A7067BF0024C69B /* ToUserAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToUserAnimationController.swift; sourceTree = "<group>"; };
 		EC4890E51A6DA54900C91CFF /* GitHub_Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHub_Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4890E91A6DA54900C91CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC4890EA1A6DA54900C91CFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,15 +96,17 @@
 			isa = PBXGroup;
 			children = (
 				EC4890EA1A6DA54900C91CFF /* AppDelegate.swift */,
-				EC4891121A6DAC5E00C91CFF /* Repository.swift */,
 				EC4890EC1A6DA54900C91CFF /* ViewController.swift */,
+				EC4890EE1A6DA54900C91CFF /* Main.storyboard */,
 				EC48910E1A6DA82F00C91CFF /* MenuTableViewController.swift */,
 				EC48910C1A6DA7A700C91CFF /* SearchReposViewController.swift */,
-				EC4891141A6DAEF700C91CFF /* NetworkController.swift */,
 				EC992FFB1A704CE600B78CD7 /* SearchUsersViewController.swift */,
+				EC3F96941A7067BF0024C69B /* ToUserAnimationController.swift */,
+				EC3F96921A7065300024C69B /* UserDetailViewController.swift */,
+				EC4891141A6DAEF700C91CFF /* NetworkController.swift */,
 				EC992FFD1A704DA400B78CD7 /* UserCell.swift */,
-				EC4890EE1A6DA54900C91CFF /* Main.storyboard */,
 				ECD0830C1A70508C0025725F /* User.swift */,
+				EC4891121A6DAC5E00C91CFF /* Repository.swift */,
 				EC4890F11A6DA54900C91CFF /* Images.xcassets */,
 				EC4890F31A6DA54900C91CFF /* LaunchScreen.xib */,
 				EC4890E81A6DA54900C91CFF /* Supporting Files */,
@@ -237,8 +243,10 @@
 				EC48910F1A6DA82F00C91CFF /* MenuTableViewController.swift in Sources */,
 				EC48910D1A6DA7A700C91CFF /* SearchReposViewController.swift in Sources */,
 				EC4891151A6DAEF700C91CFF /* NetworkController.swift in Sources */,
+				EC3F96951A7067BF0024C69B /* ToUserAnimationController.swift in Sources */,
 				EC4890ED1A6DA54900C91CFF /* ViewController.swift in Sources */,
 				ECD0830D1A70508C0025725F /* User.swift in Sources */,
+				EC3F96931A7065300024C69B /* UserDetailViewController.swift in Sources */,
 				EC992FFC1A704CE600B78CD7 /* SearchUsersViewController.swift in Sources */,
 				EC4890EB1A6DA54900C91CFF /* AppDelegate.swift in Sources */,
 				EC4891131A6DAC5E00C91CFF /* Repository.swift in Sources */,
