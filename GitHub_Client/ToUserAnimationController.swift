@@ -25,6 +25,8 @@ class ToUserAnimationController : NSObject, UIViewControllerAnimatedTransitionin
     let cellSnapShot = cell.imageView.snapshotViewAfterScreenUpdates(false)
     cell.imageView.hidden = true
     cellSnapShot.frame = containerView.convertRect(cell.imageView.frame, fromView: cell.imageView.superview)
+    cellSnapShot.layer.masksToBounds = true
+    cellSnapShot.layer.cornerRadius = 10.0
     
     toVC.view.frame = transitionContext.finalFrameForViewController(toVC)
     toVC.view.alpha = 0

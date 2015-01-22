@@ -11,7 +11,6 @@
 		EC3F96951A7067BF0024C69B /* ToUserAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3F96941A7067BF0024C69B /* ToUserAnimationController.swift */; };
 		EC4890EB1A6DA54900C91CFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4890EA1A6DA54900C91CFF /* AppDelegate.swift */; };
 		EC4890ED1A6DA54900C91CFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4890EC1A6DA54900C91CFF /* ViewController.swift */; };
-		EC4890F01A6DA54900C91CFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4890EE1A6DA54900C91CFF /* Main.storyboard */; };
 		EC4890F21A6DA54900C91CFF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4890F11A6DA54900C91CFF /* Images.xcassets */; };
 		EC4890F51A6DA54900C91CFF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4890F31A6DA54900C91CFF /* LaunchScreen.xib */; };
 		EC4891011A6DA54900C91CFF /* GitHub_ClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4891001A6DA54900C91CFF /* GitHub_ClientTests.swift */; };
@@ -19,6 +18,7 @@
 		EC48910F1A6DA82F00C91CFF /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC48910E1A6DA82F00C91CFF /* MenuTableViewController.swift */; };
 		EC4891131A6DAC5E00C91CFF /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4891121A6DAC5E00C91CFF /* Repository.swift */; };
 		EC4891151A6DAEF700C91CFF /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4891141A6DAEF700C91CFF /* NetworkController.swift */; };
+		EC5F746E1A707CE300C98BCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC5F746D1A707CE300C98BCB /* Main.storyboard */; };
 		EC992FFC1A704CE600B78CD7 /* SearchUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC992FFB1A704CE600B78CD7 /* SearchUsersViewController.swift */; };
 		EC992FFE1A704DA400B78CD7 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC992FFD1A704DA400B78CD7 /* UserCell.swift */; };
 		ECD0830D1A70508C0025725F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD0830C1A70508C0025725F /* User.swift */; };
@@ -41,7 +41,6 @@
 		EC4890E91A6DA54900C91CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC4890EA1A6DA54900C91CFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC4890EC1A6DA54900C91CFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EC4890EF1A6DA54900C91CFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC4890F11A6DA54900C91CFF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC4890F41A6DA54900C91CFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EC4890FA1A6DA54900C91CFF /* GitHub_ClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHub_ClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +50,7 @@
 		EC48910E1A6DA82F00C91CFF /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTableViewController.swift; path = ../MenuTableViewController.swift; sourceTree = "<group>"; };
 		EC4891121A6DAC5E00C91CFF /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		EC4891141A6DAEF700C91CFF /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		EC5F746D1A707CE300C98BCB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EC992FFB1A704CE600B78CD7 /* SearchUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersViewController.swift; sourceTree = "<group>"; };
 		EC992FFD1A704DA400B78CD7 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		ECD0830C1A70508C0025725F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -97,14 +97,14 @@
 			children = (
 				EC4890EA1A6DA54900C91CFF /* AppDelegate.swift */,
 				EC4890EC1A6DA54900C91CFF /* ViewController.swift */,
-				EC4890EE1A6DA54900C91CFF /* Main.storyboard */,
 				EC48910E1A6DA82F00C91CFF /* MenuTableViewController.swift */,
 				EC48910C1A6DA7A700C91CFF /* SearchReposViewController.swift */,
 				EC992FFB1A704CE600B78CD7 /* SearchUsersViewController.swift */,
-				EC3F96941A7067BF0024C69B /* ToUserAnimationController.swift */,
 				EC3F96921A7065300024C69B /* UserDetailViewController.swift */,
+				EC3F96941A7067BF0024C69B /* ToUserAnimationController.swift */,
 				EC4891141A6DAEF700C91CFF /* NetworkController.swift */,
 				EC992FFD1A704DA400B78CD7 /* UserCell.swift */,
+				EC5F746D1A707CE300C98BCB /* Main.storyboard */,
 				ECD0830C1A70508C0025725F /* User.swift */,
 				EC4891121A6DAC5E00C91CFF /* Repository.swift */,
 				EC4890F11A6DA54900C91CFF /* Images.xcassets */,
@@ -219,7 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC4890F01A6DA54900C91CFF /* Main.storyboard in Resources */,
+				EC5F746E1A707CE300C98BCB /* Main.storyboard in Resources */,
 				EC4890F51A6DA54900C91CFF /* LaunchScreen.xib in Resources */,
 				EC4890F21A6DA54900C91CFF /* Images.xcassets in Resources */,
 			);
@@ -272,14 +272,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EC4890EE1A6DA54900C91CFF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC4890EF1A6DA54900C91CFF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EC4890F31A6DA54900C91CFF /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

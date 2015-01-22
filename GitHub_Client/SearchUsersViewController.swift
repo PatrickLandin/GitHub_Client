@@ -20,6 +20,7 @@ class SearchUsersViewController: UIViewController, UICollectionViewDataSource, U
       
       self.collectionView.dataSource = self
       self.searchBar.delegate = self
+      self.navigationController?.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -30,6 +31,8 @@ class SearchUsersViewController: UIViewController, UICollectionViewDataSource, U
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier("USER_CELL", forIndexPath: indexPath) as UserCell
+    cell.layer.masksToBounds = true
+    cell.layer.cornerRadius = 10.0
     var user = self.users[indexPath.row]
     if user.avatarImage == nil {
       NetworkController.sharedNetworkController.fetchAvatarForURL(user.avatarImageURL, completionHandler: { (image) -> (Void) in

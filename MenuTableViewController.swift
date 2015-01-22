@@ -22,6 +22,13 @@ class MenuTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
   
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    self.navigationController?.delegate = nil
+    // This prevents a crash when navigating back to MenuVC after visiting SearchUserVC or SearchReposVC.
+    // 
+  }
+  
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
     if NetworkController.sharedNetworkController.accessToken == nil {

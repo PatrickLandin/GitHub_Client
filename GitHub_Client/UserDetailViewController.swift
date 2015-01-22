@@ -18,6 +18,8 @@ class UserDetailViewController: UIViewController {
         super.viewDidLoad()
       
       self.userImageView.image = selectedUser.avatarImage
+      self.userImageView.layer.masksToBounds = true
+      self.userImageView.layer.cornerRadius = 10.0
 
         // Do any additional setup after loading the view.
     }
