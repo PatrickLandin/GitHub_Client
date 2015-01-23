@@ -17,6 +17,8 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       self.navigationController?.delegate = nil
+      // This prevents a crash when navigating back to UserDetailVC after visiting WebVC.
+      // Navigation controller delegate continues to look for zombie animation.
       
       self.webView.frame = self.view.frame
       self.view.addSubview(webView)
