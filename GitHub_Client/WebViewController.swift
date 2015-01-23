@@ -16,6 +16,7 @@ class WebViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      self.navigationController?.delegate = nil
       
       self.webView.frame = self.view.frame
       self.view.addSubview(webView)

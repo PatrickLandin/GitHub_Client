@@ -171,6 +171,41 @@ class NetworkController {
     dataTask.resume()
   }
   
+  func fetchReposForUser(userName : String, completionHandler : ([Repository]?, String?) -> (Void)) {
+    let url = NSURL(string: "https://api.github.com/users/\(userName)/repos")
+    let request = NSMutableURLRequest(URL: url!)
+    request.setValue("token \(self.accessToken!)", forHTTPHeaderField: "Authorization")
+    
+    let dataTask = self.urlSession.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+      if error == nil {
+        if let httpResponse = response as? NSHTTPURLResponse {
+          println(httpResponse.statusCode)
+          switch httpResponse.statusCode {
+          case 200...299:
+            println("Boom fetch user repo")
+            if let jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [AnyObject] {
+              
+              var manyRepos = [Repository]()
+              for item in jsonArray {
+                if let jsonDictionary = item as? [String : AnyObject] {
+                  let repos = Repository(jsonDictionary: jsonDictionary)
+                  manyRepos.append(repos)
+                }
+                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                  completionHandler(manyRepos, nil)
+                })
+              }
+            }
+          default:
+            println("fetch user repo default")
+          }
+        }
+      }
+    })
+    dataTask.resume()
+  }
+
+  
   func fetchAvatarForURL(url : String, completionHandler : (UIImage) -> (Void)) {
     
     let url = NSURL(string: url)
@@ -185,16 +220,6 @@ class NetworkController {
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

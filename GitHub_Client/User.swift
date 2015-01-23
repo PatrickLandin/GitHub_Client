@@ -12,13 +12,12 @@ struct User {
   var name : String
   var avatarImageURL : String
   var avatarImage : UIImage?
-//  var userURL : String
+  var userURL : String
   
   init(jsonDictionary : [String : AnyObject]) {
     self.name = jsonDictionary["login"] as String
     self.avatarImageURL = jsonDictionary["avatar_url"] as String
-//    let ownerDictionary = jsonDictionary["owner"] as [String : AnyObject]
-//    self.userURL = ownerDictionary["url"] as String
+    self.userURL = jsonDictionary["html_url"] as String
   }
   
 }

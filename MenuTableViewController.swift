@@ -10,7 +10,7 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
   
-//  var alertView : UIAlertView
+  var alertView : UIView!
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,15 +31,15 @@ class MenuTableViewController: UITableViewController {
     // Navigation controller delegate continues to look for zombie animation.
     
     if NetworkController.sharedNetworkController.accessToken == nil {
-      let alertView = NSBundle.mainBundle().loadNibNamed("AlertView", owner: self, options: nil).first as UIView
-      alertView.center = self.view.center
-      alertView.alpha = 0
-      alertView.transform = CGAffineTransformMakeScale(0.5, 0.5)
-      self.view.addSubview(alertView)
+      self.alertView = NSBundle.mainBundle().loadNibNamed("AlertView", owner: self, options: nil).first as UIView
+      self.alertView.center = self.view.center
+      self.alertView.alpha = 0
+      self.alertView.transform = CGAffineTransformMakeScale(0.5, 0.5)
+      self.view.addSubview(self.alertView)
       
       UIView.animateWithDuration(0.4, delay: 0.5, options: nil, animations: { () -> Void in
-        alertView.alpha = 1
-        alertView.transform =  CGAffineTransformMakeScale(1.0, 1.0)
+        self.alertView.alpha = 1
+        self.alertView.transform = CGAffineTransformMakeScale(1.0, 1.0)
         }) { (finished) -> Void in
       }
     } else {
@@ -56,7 +56,8 @@ class MenuTableViewController: UITableViewController {
     if NetworkController.sharedNetworkController.accessToken == nil {
       NetworkController.sharedNetworkController.requestAccessToken()
     }
-    
+    self.alertView.alpha = 0
+    //Make AlertView invisible after use
   }
   
     override func didReceiveMemoryWarning() {

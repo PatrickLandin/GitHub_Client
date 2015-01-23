@@ -51,20 +51,6 @@
                                             <segue destination="8qN-K9-caQ" kind="show" identifier="SHOW_USER" id="iTY-VX-2bY"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="al9-AR-N5J" style="IBUITableViewCellStyleDefault" id="hiD-3l-cD2">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hiD-3l-cD2" id="6xp-zl-y15">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="al9-AR-N5J">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="ME" id="3wv-ub-Z2j">
@@ -271,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9z-Jv-SmV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2445" y="68"/>
+            <point key="canvasLocation" x="3159" y="68"/>
         </scene>
         <!--User Detail View Controller-->
         <scene sceneID="DoO-CE-Au9">
@@ -286,14 +272,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Ag-sa-Qyy">
-                                <rect key="frame" x="16" y="72" width="150" height="150"/>
+                                <rect key="frame" x="16" y="72" width="125" height="125"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="PyD-XW-35b"/>
-                                    <constraint firstAttribute="height" constant="150" id="ocl-gM-IkK"/>
+                                    <constraint firstAttribute="width" constant="125" id="PyD-XW-35b"/>
+                                    <constraint firstAttribute="height" constant="125" id="ocl-gM-IkK"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXW-rY-eVR">
+                                <rect key="frame" x="149" y="105" width="109" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DKv-LS-dns">
-                                <rect key="frame" x="0.0" y="230" width="600" height="370"/>
+                                <rect key="frame" x="0.0" y="205" width="600" height="395"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -320,24 +312,22 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="U3c-jh-A8B" kind="show" identifier="SHOW_WEB" id="fzL-qC-hnX"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTo-J6-pre">
-                                <rect key="frame" x="174" y="153" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User URL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTo-J6-pre">
+                                <rect key="frame" x="149" y="140" width="54" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXW-rY-eVR">
-                                <rect key="frame" x="174" y="105" width="109" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="WTo-J6-pre" firstAttribute="top" secondItem="eXW-rY-eVR" secondAttribute="bottom" constant="8" id="1a0-m6-8HC"/>
                             <constraint firstItem="7Ag-sa-Qyy" firstAttribute="top" secondItem="7P4-UL-5hB" secondAttribute="bottom" constant="8" id="4LI-n0-CHn"/>
                             <constraint firstItem="DKv-LS-dns" firstAttribute="top" secondItem="eXW-rY-eVR" secondAttribute="bottom" constant="8" id="4vY-Hw-1y4"/>
                             <constraint firstItem="DKv-LS-dns" firstAttribute="leading" secondItem="BW7-a2-ccq" secondAttribute="leadingMargin" constant="-16" id="6i0-gR-EaV"/>
@@ -346,6 +336,7 @@
                             <constraint firstItem="ZBS-YO-lPb" firstAttribute="top" secondItem="DKv-LS-dns" secondAttribute="bottom" id="OMF-kM-jfb"/>
                             <constraint firstItem="eXW-rY-eVR" firstAttribute="top" secondItem="7P4-UL-5hB" secondAttribute="bottom" constant="41" id="PAR-SL-9IN"/>
                             <constraint firstItem="eXW-rY-eVR" firstAttribute="bottom" secondItem="7Ag-sa-Qyy" secondAttribute="bottom" id="PMJ-fs-e9E"/>
+                            <constraint firstItem="WTo-J6-pre" firstAttribute="leading" secondItem="7Ag-sa-Qyy" secondAttribute="trailing" constant="8" id="Slg-P2-C3O"/>
                             <constraint firstAttribute="centerX" secondItem="eXW-rY-eVR" secondAttribute="centerX" id="a7D-Ed-gxO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DKv-LS-dns" secondAttribute="trailing" constant="-16" id="oNa-aH-jyM"/>
                             <constraint firstItem="7Ag-sa-Qyy" firstAttribute="leading" secondItem="BW7-a2-ccq" secondAttribute="leadingMargin" constant="184" id="owf-f8-IIf"/>
@@ -368,6 +359,7 @@
                         <outlet property="tableView" destination="DKv-LS-dns" id="WXp-bq-0Sz"/>
                         <outlet property="userImageView" destination="7Ag-sa-Qyy" id="Rqk-0W-48N"/>
                         <outlet property="userNameLabel" destination="eXW-rY-eVR" id="KLn-q9-NsL"/>
+                        <outlet property="userURL" destination="WTo-J6-pre" id="z5S-cA-lYu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wr2-XQ-R1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -393,4 +385,7 @@
             <point key="canvasLocation" x="368" y="400"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fzL-qC-hnX"/>
+    </inferredMetricsTieBreakers>
 </document>
