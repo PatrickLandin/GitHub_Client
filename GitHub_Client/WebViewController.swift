@@ -22,6 +22,13 @@ class WebViewController: UIViewController {
       
       self.webView.frame = self.view.frame
       self.view.addSubview(webView)
+      self.webView.setTranslatesAutoresizingMaskIntoConstraints(false)
+      let views = ["webView" : self.webView]
+      
+      let webViewConstraintHorizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[webView]|", options: nil, metrics: nil, views: views)
+      view.addConstraints(webViewConstraintHorizontal)
+      let webViewConstraintVertical = NSLayoutConstraint.constraintsWithVisualFormat("V:|[webView]|", options: nil, metrics: nil, views: views)
+      view.addConstraints(webViewConstraintVertical)
       
       let request = NSURLRequest(URL: NSURL(string: self.repoURL)!)
       self.webView.loadRequest(request)
