@@ -29,32 +29,15 @@ class MenuTableViewController: UITableViewController {
     self.navigationController?.delegate = nil
     // This prevents a crash when navigating back to MenuVC after visiting SearchUserVC or SearchReposVC.
     // Navigation controller delegate continues to look for zombie animation.
-    
-//    if NetworkController.sharedNetworkController.accessToken == nil {
-//      self.alertView = NSBundle.mainBundle().loadNibNamed("AlertView", owner: self, options: nil).first as UIView
-//      self.alertView.center = self.view.center
-//      self.alertView.alpha = 0
-//      self.alertView.transform = CGAffineTransformMakeScale(0.5, 0.5)
-//      self.view.addSubview(self.alertView)
-//      
-//      UIView.animateWithDuration(0.4, delay: 0.5, options: nil, animations: { () -> Void in
-//        self.alertView.alpha = 1
-//        self.alertView.transform = CGAffineTransformMakeScale(1.0, 1.0)
-//        }) { (finished) -> Void in
-//      }
-//    } else {
-//      println("Got it")
-//    }
+
   }
   
-//  @IBAction func gitHubButtonPressed(sender: AnyObject) {
-//    
-//    if NetworkController.sharedNetworkController.accessToken == nil {
-//      NetworkController.sharedNetworkController.requestAccessToken()
-//    }
-//    self.alertView.alpha = 0
-//    //Make AlertView invisible after use
-//  }
+  override func viewDidAppear(animated: Bool) {
+        if NetworkController.sharedNetworkController.accessToken == nil {
+          NetworkController.sharedNetworkController.requestAccessToken()
+        }
+  }
+
   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -129,5 +112,40 @@ class MenuTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+  
+  
+  
+  
+  //    if NetworkController.sharedNetworkController.accessToken == nil {
+  //      self.alertView = NSBundle.mainBundle().loadNibNamed("AlertView", owner: self, options: nil).first as UIView
+  //      self.alertView.center = self.view.center
+  //      self.alertView.alpha = 0
+  //      self.alertView.transform = CGAffineTransformMakeScale(0.5, 0.5)
+  //      self.view.addSubview(self.alertView)
+  //
+  //      UIView.animateWithDuration(0.4, delay: 0.5, options: nil, animations: { () -> Void in
+  //        self.alertView.alpha = 1
+  //        self.alertView.transform = CGAffineTransformMakeScale(1.0, 1.0)
+  //        }) { (finished) -> Void in
+  //      }
+  //    } else {
+  //      println("Got it")
+  //    }
+  
+  
+  
+  
+  //  @IBAction func gitHubButtonPressed(sender: AnyObject) {
+  //
+  //    if NetworkController.sharedNetworkController.accessToken == nil {
+  //      NetworkController.sharedNetworkController.requestAccessToken()
+  //    }
+  //    self.alertView.alpha = 0
+  //    //Make AlertView invisible after use
+  //  }
+  
+  
+  
+  
 
 }
